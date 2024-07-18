@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func challenge(input []int) (pyramid string) {
+func challenge(input []string) (pyramid string) {
 	numRows := len(input)*2 - 1
 	for i := 0; i < numRows; i++ {
 		startIndex := 0
@@ -19,7 +19,7 @@ func challenge(input []int) (pyramid string) {
 		}
 
 		for j := startIndex; j < len(input); j++ {
-			pyramid += fmt.Sprintf("%d ", input[j])
+			pyramid += fmt.Sprintf("%s ", input[j])
 		}
 
 		pyramid += "\n"
@@ -29,7 +29,7 @@ func challenge(input []int) (pyramid string) {
 }
 
 func main() {
-	input := []int{1, 2, 3, 4, 5, 6, 7, 8}
+	input := []string{"1", "2", "3", "4", "5", "6", "7", "8"}
 	pym := challenge(input)
 	fmt.Println(pym)
 }
