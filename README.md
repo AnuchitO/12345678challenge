@@ -1,4 +1,4 @@
-# 12345678challenge
+# 12345678 challenge Generator
 1 2 3 4 5 6 7 8 Rap Challenge Generator: Create lyric pyramids for your raps.
 
 # How to use
