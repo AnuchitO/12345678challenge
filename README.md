@@ -17,3 +17,7 @@ go run eight.go 1 2 3 4 5 6 7 8
 ```bash
 go run eight.go หมอ ลำ นี่ มา ตั้ง แต่ เวียง จันทน์
 ```
+
+```bash
+make run-laum
+```
