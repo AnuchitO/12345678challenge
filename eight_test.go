@@ -6,7 +6,7 @@ import (
 
 func Test12345678Challenge(t *testing.T) {
 	t.Run("topHalf", func(t *testing.T) {
-		words := [8]string{"1", "2", "3", "4", "5", "6", "7", "8"}
+		words := []string{"1", "2", "3", "4", "5", "6", "7", "8"}
 		want := ` 1 2 3 4 5 6 7 8
   2 3 4 5 6 7 8
    3 4 5 6 7 8
@@ -25,7 +25,7 @@ func Test12345678Challenge(t *testing.T) {
 	})
 
 	t.Run("bottomHalf", func(t *testing.T) {
-		words := [8]string{"1", "2", "3", "4", "5", "6", "7", "8"}
+		words := []string{"1", "2", "3", "4", "5", "6", "7", "8"}
 		want := `        8
        7 8
       6 7 8
@@ -44,7 +44,7 @@ func Test12345678Challenge(t *testing.T) {
 	})
 
 	t.Run("challenge", func(t *testing.T) {
-		words := [8]string{"1", "2", "3", "4", "5", "6", "7", "8"}
+		words := []string{"1", "2", "3", "4", "5", "6", "7", "8"}
 		want := ` 1 2 3 4 5 6 7 8
   2 3 4 5 6 7 8
    3 4 5 6 7 8
@@ -70,8 +70,8 @@ func Test12345678Challenge(t *testing.T) {
 		}
 	})
 
-	t.Run("mor lum", func(t *testing.T) {
-		words := [8]string{"หมอ", "ลำ", "นี่", "มา", "ตั้ง", "แต่", "เวียง", "จันทน์"}
+	t.Run("mor laum", func(t *testing.T) {
+		words := []string{"หมอ", "ลำ", "นี่", "มา", "ตั้ง", "แต่", "เวียง", "จันทน์"}
 		want := ` หมอ ลำ นี่ มา ตั้ง แต่ เวียง จันทน์
   ลำ นี่ มา ตั้ง แต่ เวียง จันทน์
    นี่ มา ตั้ง แต่ เวียง จันทน์

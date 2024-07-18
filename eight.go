@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func topHalf(words [8]string) (pyramid string) {
+func topHalf(words []string) (pyramid string) {
 	for cursor := 0; cursor < len(words); cursor++ {
 		for space := 0; space < cursor; space++ {
 			pyramid += " "
@@ -21,7 +21,7 @@ func topHalf(words [8]string) (pyramid string) {
 	return pyramid
 }
 
-func bottomHalf(words [8]string) (pyramid string) {
+func bottomHalf(words []string) (pyramid string) {
 	for i := len(words) - 1; i >= 0; i-- {
 		for space := 0; space < i; space++ {
 			pyramid += " "
@@ -37,7 +37,7 @@ func bottomHalf(words [8]string) (pyramid string) {
 	return pyramid
 }
 
-func challenge(words [8]string) string {
+func challenge(words []string) string {
 	return topHalf(words) + bottomHalf(words)
 }
 
@@ -48,12 +48,11 @@ func main() {
 	fmt.Println(pym)
 }
 
-func args() [8]string {
+func args() []string {
 	words := os.Args[1:]
-	if len(words) != 8 {
-		fmt.Println("Please provide 8 words")
-		os.Exit(1)
+	if len(words) == 0 {
+		words = []string{"1", "2", "3", "4", "5", "6", "7", "8"}
 	}
 
-	return [8]string{words[0], words[1], words[2], words[3], words[4], words[5], words[6], words[7]}
+	return words
 }
