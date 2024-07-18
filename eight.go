@@ -1,15 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-func main() {
-	input := []int{1, 2, 3, 4, 5, 6, 7, 8}
-
-	// Calculate the total number of rows
+func challenge(input []int) (pyramid string) {
 	numRows := len(input)*2 - 1
-
 	for i := 0; i < numRows; i++ {
-		// Determine the starting index for each row
 		startIndex := 0
 		if i < len(input) {
 			startIndex = i
@@ -17,16 +14,22 @@ func main() {
 			startIndex = numRows - i - 1
 		}
 
-		// Print leading spaces
 		for j := 0; j < startIndex; j++ {
-			fmt.Print(" ")
+			pyramid += " "
 		}
 
-		// Print numbers
 		for j := startIndex; j < len(input); j++ {
-			fmt.Printf("%d ", input[j])
+			pyramid += fmt.Sprintf("%d ", input[j])
 		}
 
-		fmt.Println()
+		pyramid += "\n"
 	}
+
+	return pyramid
+}
+
+func main() {
+	input := []int{1, 2, 3, 4, 5, 6, 7, 8}
+	pym := challenge(input)
+	fmt.Println(pym)
 }
