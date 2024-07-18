@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 )
 
 func topHalf(words [8]string) (pyramid string) {
@@ -41,7 +42,18 @@ func challenge(words [8]string) string {
 }
 
 func main() {
-	words := [8]string{"1", "2", "3", "4", "5", "6", "7", "8"}
+	words := args()
 	pym := challenge(words)
+	fmt.Println()
 	fmt.Println(pym)
+}
+
+func args() [8]string {
+	words := os.Args[1:]
+	if len(words) != 8 {
+		fmt.Println("Please provide 8 words")
+		os.Exit(1)
+	}
+
+	return [8]string{words[0], words[1], words[2], words[3], words[4], words[5], words[6], words[7]}
 }
